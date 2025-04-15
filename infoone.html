@@ -1,0 +1,135 @@
+<html>
+    <head>  
+<title>Instructions for To Do List</title>
+<style>*{
+	
+	margin: 0;
+	padding: 0;
+	font-family: Century Gothic;
+	background-color: rgb(238, 238, 144);
+}
+
+h1{
+    text-align: center;
+    color: rgb(4, 4, 66);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 50px;    
+  }
+
+::-webkit-scrollbar{
+    width: 15px;
+    background: linear-gradient(transparent,transparent)
+  }
+
+  ::-webkit-scrollbar-thumb{
+    background: linear-gradient(transparent,transparent);
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover{
+    background: linear-gradient(transparent,transparent);
+  }
+
+.container{
+	position: relative;
+	width: 1000px;
+	height: 300px;  
+	margin-top: 100px;
+	margin-left: 240px;                   /*margin: 240px auto;*/
+ 	background: rgb(238, 238, 144); 
+}
+
+.container .box{
+	position: relative;
+	width: calc(400px - 30px);
+	height: calc(400px - 30px);
+	background: rgb(4, 4, 66);
+	float: left;
+	margin: 50px;
+	margin-top: 15px;
+	box-sizing: border-box;
+	overflow: hidden;
+	border-radius: 10px;  
+}
+
+.container .box .icon{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: orange;
+	transition: 0.5s;
+    z-index: 1;
+}
+
+.container .box:hover .icon{
+	top: 20px;
+	left: calc(50% - 40px);
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+}
+
+.container .box .icon #plus{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	font-size: 80px;
+	transition: 0.5s;
+	color: #fff;
+	background-color: orange;
+}
+
+.container .box:hover .icon #plus{
+	font-size: 40px;
+}
+
+.container .box .content{
+	position: absolute;
+	top: 100px;
+	height: calc(100% -100px);
+	text-align: center;
+	padding: 20px;
+	box-sizing: border-box;
+	transition: 0.5s; 
+	background-color: rgb(4, 4, 66);
+}
+
+.container .box .content h3{
+	margin: 0 0 40px;
+	padding: 0;
+	color: #fff;
+	background-color: rgb(4, 4, 66);
+}
+
+.container .box .content p{
+	margin: 0;
+	padding: 0;
+	color: #fff;
+	background-color: rgb(4, 4, 66);
+}</style>
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+<body>
+	<h1>MANUAL TO DO LIST</h1>
+    <div class="container">
+		<div class="box">
+			<div class="icon"><span id="plus">+</span></div>
+			<div class="content">
+				<h3>Add</h3>
+				<p>It is used to add a task to the list by first inputting the task in the input box given and then by clicking on the Plus sign or by pressing enter on your keyboard</p>
+			</div>
+		</div>
+        <div class="box">
+			<div class="icon"><span id="plus" class="fa fa-trash"></span></div>
+			<div class="content">
+				<h3>Remove All </h3>
+				<p>It is used to remove all the task in the list at once by clicking the trash icon and then typing in yes in the pop up to confirm the removing of all tasks</p>
+			</div>
+		</div>
+	</div>
+  </body>
+
+  </html>

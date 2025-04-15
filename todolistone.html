@@ -1,0 +1,180 @@
+<html>
+    <head>  
+<title>To-do list</title>
+<style>body {
+    background-image: url(todolistbg.jpg);
+    background-size: 1920px 1080px;
+    background-repeat: no-repeat;
+  }
+    h1{
+      text-align: center;
+      color: white;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      font-size: 50px;    
+      font-weight: normal;
+    }
+  
+    ::-webkit-scrollbar{
+      width: 15px;
+      background-color: #808080;
+    }
+  
+    ::-webkit-scrollbar-thumb{
+      background: yellow;
+      border-radius: 5px;
+    }
+  
+    ::-webkit-scrollbar-thumb:hover{
+      background: rgb(181, 181, 4);
+    }
+  
+  
+  
+    .adder {
+      position: relative;
+      width: 500px;                                    /*all width 250px looks good for small to do notes*/
+      margin: 0px auto;
+      padding: 10px;
+      display: block;
+      ::-webkit-input-placeholder {
+         color: #000000;
+      }
+      .input {
+        outline: none;
+        border: 1px solid white;
+        background-color:  rgb(0, 255, 255) ;
+        height: 50px;
+        width: 500px;
+        padding-left: 10px;
+        font-weight: 800;
+        font-size: 16px;
+        margin-left: -5px;
+        border-radius: 5px;
+      }
+      .add {
+        position: absolute;
+        margin-left: 5px;
+        top: 10;
+        font-size: 40px;
+        font-weight: 1000;
+        line-height: 1.15;
+        cursor: pointer;
+        transition: all 200ms;
+        color: rgb(255, 255, 255);
+        background-color: rgb(0, 255, 255);
+        border-radius: 5px;
+        will-change: transform;
+        &:hover{
+          transform: rotate(180deg);
+        }
+      }
+    }
+    ul {
+      padding: 0px;
+      .entry {
+        will-change: transform;
+        font-weight: 800;
+        height: auto;
+        list-style-type: none;
+        margin: 10px;
+        background-color: white;
+        color: rgb(41, 186, 186) ;
+        width: 500px;                                      /*can be auto*/
+        line-height: 3.2;
+        padding-left: 10px;
+        cursor: pointer;
+        transition: all 200ms;
+        margin: 10px auto;
+        position: relative;
+        user-select: text;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        overflow-wrap: break-word;
+        border-radius: 5px;
+        }
+        }
+      
+      .fa-trash{
+        position: absolute;
+        margin-left: 50px;
+        height: 50px;
+        color: rgb(0, 0, 0);
+        transition: all 200ms;
+        cursor: pointer;
+        background-color: rgb(0, 255, 255);
+        border-radius: 5px;
+      }
+      .fa-trash:hover{
+        background-color: rgb(255, 0, 0);
+        transform: rotate(360deg);
+  
+      }
+      i{
+        position: absolute;
+        margin-left: 580px;
+        font-weight: 500;
+        line-height: 1.15;
+        color: rgb(255, 255, 255);
+        transition: all 200ms;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+</style>
+<script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+    </script>
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+    <h1>TO-DO LIST<i class="fa fa-info-circle" style="font-size: 50px;" onclick="fxninfo()"></i></h1>   
+    <div class="adder">
+      <input type="text" class="input" placeholder="Add tasks in your list"/>
+      <button class="add">+</button><button class="fa fa-trash" style="font-size: 50px;" onclick="myFunction()"></button>
+    </div>
+    <ul>
+      <li class="entry">to do list making</li>
+    </ul> 
+    <script>var btn = document.querySelector('.add');
+        var list = document.querySelector('ul');
+        
+        btn.addEventListener('click', addNewItem);
+        
+        
+        function addNewItem() {
+          var newItem = document.querySelector('.input').value;
+          if (newItem != '') {
+            document.querySelector('.input').value = '';
+            var li = document.createElement('li');
+            var ul = document.querySelector('ul');
+            li.className = 'entry';
+            li.appendChild(document.createTextNode(newItem)); 
+            ul.appendChild(li);
+            
+          }
+        }
+        
+        function myFunction (e) {
+          var list = document.querySelector('ul');
+          var person = prompt("removing all tasks" ,"yes" );
+          if (person == "yes") {
+            while(list.hasChildNodes() ) {
+              list.removeChild(list.firstChild)
+            
+          } 
+            }
+        }
+        
+        function fxninfo() {
+          window.open("infoone.html");
+        }
+        
+        $(".input").keydown(function (event) {
+          if (event.keyCode === 13) {
+              $(".add").click();
+          }
+        });
+        </script>
+  </body>
+
+  </html>
